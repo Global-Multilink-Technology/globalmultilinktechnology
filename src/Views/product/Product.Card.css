@@ -1,0 +1,18 @@
+@media screen and (max-width: 380px) /* Mobile */
+{
+ .card
+ { 
+  width: 18rem;
+  margin-top:30px;
+  margin-left: 40px; 
+}
+}
+@media screen and (min-width: 400px) /* Mobile 6.5inche display  */
+{
+    .card
+    { 
+     width: 18rem;
+     margin-top:30px;
+     margin-left: 65px; 
+   }
+}

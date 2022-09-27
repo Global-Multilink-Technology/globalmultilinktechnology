@@ -1,0 +1,61 @@
+@media screen and (max-width: 580px)
+{
+    .fbody
+    {
+        background-color: rgb(54, 35, 35);
+    }
+    .footerCardContainer
+    {
+      background-color: rgba(0, 0, 255, 0.9); 
+      width: '15rem'; 
+      margin: 10px;
+      height: 200px;
+      border-radius: 15px;
+      margin-top: 10px;
+    
+    }
+    .cardIconText
+    {
+        display: flex;
+    }
+   .cardTitle
+   {
+    color:white;
+    font-weight: bolder;
+    margin-left: 100px;
+   }
+   .cardIcon
+   {
+    margin-left: 20px;
+   }
+   .cardIconText
+   {
+     color:bisque;
+     font-style: normal;
+     font-size: medium;
+     margin-left: 20px;
+   }
+   .cardIconNumber
+   {
+     color:bisque;
+     font-style: normal;
+     font-size: large;
+     margin-left: 20px;
+   }
+   .cardIconEmail
+   {
+     color:bisque;
+     font-style: normal;
+     font-size: 15px;
+     margin-left: 20px;
+   }
+   .calculatorText
+   {
+     margin-top: 0px;
+     font-family: Arial, Helvetica, sans-serif;   
+     color: white;
+     font-style: italic;
+     text-decoration: underline;
+   }
+}
+

@@ -1,0 +1,188 @@
+.container1
+{
+    background-color: red;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 580px) /* Mobile */
+{
+    .container1Text{
+        color:white;
+        padding:10px;
+        margin-left: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .LOGO{
+      display: flex;      
+    }
+    .LOGOTEXT{
+        margin-top: 15px;   
+        font-family: Arial, Helvetica, sans-serif;   
+        font-size: large; 
+        color: black;  
+        font-weight: bolder;
+      }
+      .cartIcon
+      {
+        margin-left: 120px;
+        margin-top: 10px;
+
+      }
+      .menuIcon
+      {
+        margin-left: 25px;
+        margin-top: 10px;
+      }
+      .cartCounter
+      {
+        color:red;
+        border-radius: 20px;
+        font-size: large;
+      }
+      .LOGOTITLE
+      {
+        margin-top: 0px;
+        font-family: Arial, Helvetica, sans-serif;   
+        font-size: large; 
+        color: white;
+        background-color: red;
+      }
+      .calculatorText
+      {
+        margin-top: 0px;
+        font-family: Arial, Helvetica, sans-serif;   
+        color: white;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      .listx
+      {
+          padding-left: 15px;
+          font-style: italics;
+          font-weight: bolder;
+          font-variant: small-caps;
+      }
+      .listxDIV
+      {
+         display: flex;
+         margin-left: 20px;
+      }
+}
+@media screen and (min-width: 581px) /* Mobile */
+{
+    .container1Text{
+        color:white;
+        padding:10px;
+        margin-left: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .LOGO{
+      display: flex;      
+    }
+    .LOGOTEXT{
+        margin-top: 15px;   
+        font-family: Arial, Helvetica, sans-serif;   
+        font-size: large; 
+        color: black;  
+        font-weight: bolder;
+      }
+      .cartIcon
+      {
+        margin-left: 420px;
+        margin-top: 10px;
+
+      }
+      .menuIcon
+      {
+        margin-left: 25px;
+        margin-top: 10px;
+      }
+      .cartCounter
+      {
+        color:red;
+        border-radius: 20px;
+        font-size: large;
+      }
+      .LOGOTITLE
+      {
+        margin-top: 0px;
+        font-family: Arial, Helvetica, sans-serif;   
+        font-size: larger; 
+        color: white;
+        background-color: red;
+        padding: 5px;
+      }
+      .calculatorText
+      {
+        margin-top: 0px;
+        font-family: Arial, Helvetica, sans-serif;   
+        color: white;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      .listx
+      {
+          padding-left: 15px;
+          font-style: italics;
+          font-weight: bolder;
+          font-variant: small-caps;
+      }
+      .listxDIV
+      {
+         display: flex;
+         margin-left: 170px;
+      }
+}
+
+@media screen and (min-width: 778px) /* Mobile */
+{
+    
+ 
+      .cartIcon
+      {
+        margin-left: 500px;
+        margin-top: 10px;
+
+      }
+      .listxDIV
+      {
+     
+         margin-left: 200px;
+      }
+}
+@media screen and (min-width: 1020px) /* Mobile */
+{
+    
+ 
+      .cartIcon
+      {
+        margin-left: 550px;
+        margin-top: 10px;
+
+      }
+      .listxDIV
+      {
+     
+         margin-left: 240px;
+      }
+}
+@media screen and (min-width: 1100px) /* Mobile */
+{
+    
+ 
+      .cartIcon
+      {
+        margin-left: 750px;
+        margin-top: 10px;
+
+      }
+      .listxDIV
+      {
+     
+         margin-left: 340px;
+      }
+}
+
