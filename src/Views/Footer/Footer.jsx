@@ -33,7 +33,7 @@ const Footer = () =>
         <div className="cardText">
              <p className="cardIconNumber">+2348034839763</p>
              <p className="cardIconNumber">+2348063540500</p>
-             <p className="cardIconNumber">+2347063072036</p>
+             <p className="cardIconNumber">+2349071942147</p>
              <p className="cardIconText">Mon-Sat, 7am-6pm</p>
              <p className="cardIconText">Sun, 12pm-6pm</p>
         </div>
