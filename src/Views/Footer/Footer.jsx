@@ -71,7 +71,7 @@ const Footer = () =>
                 globalsolarpowersystems@gmail.com
              </p>
              <p className="cardIconEmail"> 
-                globalsolarpowersystems@gmail.com
+                
              </p>           
         </div>
         </div>
