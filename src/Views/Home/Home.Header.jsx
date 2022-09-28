@@ -24,7 +24,7 @@ const HomeHeader = ()=>
                  <div className="menuIcon"><RiAccountPinCircleFill size={23} color="red" /></div>
             </div>
             <div className="listxDIV">
-              <p className="listx">Inverters</p>
+              <p className="listx"><a className="anchorText"href="/Inverter">Inverters</a></p>
               <p className="listx">Batteries</p> 
               <p className="listx">Panels</p>
               <p className="listx">Others</p>

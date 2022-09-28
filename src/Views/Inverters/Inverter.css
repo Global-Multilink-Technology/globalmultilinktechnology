@@ -1,0 +1,15 @@
+.headText
+{
+    margin-left: 130px;
+    font-weight: bolder;
+    font-style: italic;
+
+}
+
+@media screen and (min-width: 400px) /* Mobile */
+{
+.headText
+{
+    margin-left: 160px;
+}
+}

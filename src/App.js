@@ -7,6 +7,7 @@ import BuyNow from "./Views/BuyNow/BuyNow";
 import GMLTcalculator from "./GMLTCalculator/gmltCalculator";
 import Quotation from "./GMLTCalculator/Quotation";
 import Cart from "./Views/Cart/Cart";
+import Inverter from "./Views/Inverters/Inverter";
 
 
 
@@ -22,6 +23,7 @@ const App =()=>
         <Route path="/gmltCalculator" element={<GMLTcalculator />} />
         <Route path="/Quotation" element={<Quotation />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/Inverter" element={<Inverter />} />
       </Routes>
     </div>
    

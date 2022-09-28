@@ -10,7 +10,7 @@ const Footer = () =>
     return(
       <div className="fbody">
        <div className="footerCardContainer">
-       <a href="https://wa.me/+2347063072036">
+       <a href="https://wa.me/+2348164608232">
        <p className="cardTitle">Live Chat</p>
         <div className="cardIconText">
         <div className="cardIcon">
@@ -31,6 +31,7 @@ const Footer = () =>
            <FiPhoneCall color="whitesmoke" size={33}/>
         </div>
         <div className="cardText">
+             <p className="cardIconNumber">+2348034839763</p>
              <p className="cardIconNumber">+2348063540500</p>
              <p className="cardIconNumber">+2347063072036</p>
              <p className="cardIconText">Mon-Sat, 7am-6pm</p>

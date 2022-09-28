@@ -7,6 +7,12 @@
 
 }
 
+.anchorText
+{
+  text-decoration: none;
+  color: black;
+}
+
 @media screen and (max-width: 580px) /* Mobile */
 {
     .container1Text{
