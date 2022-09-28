@@ -1,6 +1,6 @@
 .container1
 {
-    background-color: red;
+    background-color: blue;
     height: 70px;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
       }
       .cartCounter
       {
-        color:red;
+        color:blue;
         border-radius: 20px;
         font-size: large;
       }
