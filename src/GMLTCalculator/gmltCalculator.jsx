@@ -92,25 +92,27 @@ const GMLTcalculator = ()=>
       <div className="container">
 
       <div className="box">
-      <p className="loadText">Lamp(CFL)</p>
+      <p className="loadText">Lamp(F-Tube)</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateCFL_14W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+      <p className="loadTextWatt">(40W)</p>
       </div>
-
       <div className="box">
-      <p className="loadText">Celing Fan -70Watts</p>
+      <p className="loadText">Celing Fan(CF)</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fan}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateFan(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+      <p className="loadTextWatt">(70W)</p>
       </div>
       </div>
       <div className="container">
       <div className="box">
-      <p className="loadText">Laptop-60Watts <span style={{color:"white"}}>.......</span></p>
+      <p className="loadText">Laptops(LAP)</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Laptop_60W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateLaptop_60W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+      <p className="loadTextWatt">(65W)</p>
       </div>
       <div className="box">
       <p className="loadText">Television(TV)</p>
@@ -122,16 +124,17 @@ const GMLTcalculator = ()=>
       </div>
       <div className="container">
       <div className="box">
-      <p className="loadText">Washing Machine<span style={{color:"white"}}>......</span></p>
-      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={WashingMachine_300W}>
+      <p className="loadText">Washing Mac</p>      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={WashingMachine_300W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateWashingMachine_300W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+      <p className="loadTextWatt">(100W)</p>
       </div>
       <div className="box">
-      <p className="loadText">AC 1.5hp</p>
+      <p className="loadText">AC Split Unit</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={AC_1_5hp}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateAC_1_5hp(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+        <p className="loadTextWatt">(1.5hp)</p>
       </div>
       </div>
       </div>
