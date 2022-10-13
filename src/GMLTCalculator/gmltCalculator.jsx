@@ -120,7 +120,7 @@ const GMLTcalculator = ()=>
       </DropdownButton>
       <p className="loadTextWatt">(65W)</p>
       </div>
-      <div className="box">
+      <div className="box">  
       <p className="loadText">Television(TV)</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={TV_150W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateTV_150W(data.id)}>{data.id}</Dropdown.Item>)}      
