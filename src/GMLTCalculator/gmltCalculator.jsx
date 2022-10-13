@@ -22,54 +22,67 @@ const GMLTcalculator = ()=>
     const [AC_1_5hp,setAC_1_5hp] = useState(0);
     const [WashingMachine_300W,setWashigMachine_300W] = useState(0);
     const [EnergyBulb_40W,setEnergyBulb_40W] = useState(0);
+    const [Fridge_150W,setFridge_150W] = useState(0);
+    const [DeepFreezer_400W,setDeepFreezer_400W] = useState(0);
 
     const updateWashingMachine_300W = (data)=>
     {
         setWashigMachine_300W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(data*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(data*300))
       
     }
     const updateAC_1_5hp = (data)=>
     {
         setAC_1_5hp(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(data*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(data*1118.55)+(WashingMachine_300W*300))
       
     }
     const updateCFL_14W = (data)=>
     {
         setCFL_14W(data)
-        setLoad((data*14)+(Fan*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((data*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
       
     }
     
     const updateFan = (data)=>
     {
         setFan(data)
-        setLoad((CFL_14W*14)+(data*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(data*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
         
     const updateTV_150W = (data)=>
     {
         setTV_150W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(TV_100WBELOW)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(data*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(TV_100WBELOW)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(data*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
 
     const updateLaptop_60W = (data)=>
     {
         setLaptop_60W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(data*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(data*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
 
     const updateTV100WBELOW = (data)=>
     {
         setTV_100WBELOW(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(data*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(data*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
     const updateEnergyBulb_40W = (data)=>
     {
         setEnergyBulb_40W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(data*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Fridge_150W*150)+(DeepFreezer_400W*400)+(Laptop_60W*65)+(data*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
+    const updateFridge_150W = (data)=>
+    {
+        setFridge_150W(data)
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W)+(data*150)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+    }
+    const updateDeepFreezer_400W = (data)=>
+    {
+        setDeepFreezer_400W(data)
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W)+(data*400)+(Fridge_150W)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+    }
+ 
  
    return(
     <div>
@@ -141,6 +154,21 @@ const GMLTcalculator = ()=>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateAC_1_5hp(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
         <p className="loadTextWatt">(1.5hp)</p>
+      </div>
+      </div>
+      <div className="container">
+      <div className="box">
+      <p className="loadText">Fridge(1-Door)</p>      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fridge_150W}>
+         {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateFridge_150W(data.id)}>{data.id}</Dropdown.Item>)}      
+      </DropdownButton>
+      <p className="loadTextWatt">(150W)</p>
+      </div>
+      <div className="box">
+      <p className="loadText">Deep Freezer</p>
+      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={DeepFreezer_400W}>
+         {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateDeepFreezer_400W(data.id)}>{data.id}</Dropdown.Item>)}      
+      </DropdownButton>
+        <p className="loadTextWatt">(400W)</p>
       </div>
       </div>
       </div>
