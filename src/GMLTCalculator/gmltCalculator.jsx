@@ -74,14 +74,15 @@ const GMLTcalculator = ()=>
       <div className="container">
         
         <div className="box">
-        <p className="loadText"> TV-100W & Below</p>
-        <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
+        <p className="loadText">Television(TV)</p>
+           <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
            {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateTV100WBELOW(data.id)}>{data.id}</Dropdown.Item>)}      
         </DropdownButton>
+        <p className="loadTextWatt">(100W)</p>
         </div>
   
         <div className="box">
-        <p className="loadText">Energy Bulb -40Watts</p>
+        <p className="loadText">Energy Bulb</p>
         <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fan}>
            {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateFan(data.id)}>{data.id}</Dropdown.Item>)}      
         </DropdownButton>
@@ -90,7 +91,7 @@ const GMLTcalculator = ()=>
       <div className="container">
 
       <div className="box">
-      <p className="loadText">Lamp(CFL)-11Watts</p>
+      <p className="loadText">Lamp(CFL)</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateCFL_14W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>

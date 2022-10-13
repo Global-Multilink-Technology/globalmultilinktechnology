@@ -1,10 +1,4 @@
 
-.power
-{
- margin-left: 145px; 
-
-}
-
 @media screen and (max-width: 400px) /* Mobile */
 {
    .container
@@ -13,11 +7,11 @@
    }
    .header
    {
-      margin-left: 70px;
+      margin-left: 140px;
    }
    .headerX
    {
-      margin-left: 140px;
+      margin-left: 150px;
    }
    .power
    {
@@ -32,6 +26,10 @@
        justify-items: center;
 
        margin-left: 32px;
+   }
+   .loadTextWatt
+   {
+       margin-left: 40px;
    }
    .box
    {
@@ -76,12 +74,12 @@
    }
    .header
    {
-      margin-left: 90px;
+      margin-left: 140px;
    }
 
    .headerX
    {
-      margin-left: 140px;
+      margin-left: 150px;
    }
    .power
    {
@@ -109,6 +107,11 @@
     .loadText
     {
         margin-left: 0px;
+    }
+    .loadTextWatt
+    {
+        margin-left: 35px;
+        margin-top: 10px;
     }
     .MainContainer
     {
