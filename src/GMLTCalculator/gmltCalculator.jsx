@@ -70,6 +70,7 @@ const GMLTcalculator = ()=>
       <HomeHeader />
       <h2 className="header">Select your load(s)</h2>
       <h2 className="headerX">{load}watts</h2>
+      <div className="MainContainer">
       <div className="container">
         
         <div className="box">
@@ -128,6 +129,7 @@ const GMLTcalculator = ()=>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={AC_1_5hp}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateAC_1_5hp(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
+      </div>
       </div>
       </div>
       <div className="buttonDIV">

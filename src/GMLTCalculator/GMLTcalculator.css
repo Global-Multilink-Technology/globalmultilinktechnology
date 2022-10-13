@@ -24,6 +24,15 @@
     margin-left: 145px; 
 
    }
+   .MainContainer
+   {
+       align-content: center;
+       align-items: center;
+       justify-content: center;
+       justify-items: center;
+
+       margin-left: 32px;
+   }
    .box
    {
        border: 2px;
@@ -35,7 +44,8 @@
        height: 120px;
        border: 20px solid #969696;
        background: #d9dbda;
-       margin: 10px
+       margin: 10px;
+       margin-left: 50px;
 
    }
     .dropdowncontainer
@@ -48,7 +58,7 @@
     }
     .loadText
     {
-        margin-left: 10px;
+        margin-left: 0px;
     }
    .buttonDIV
    {
@@ -80,16 +90,13 @@
    }
    .box
    {
-       border: 2px;
-       border-width: 2px;
-       border-color: black;
-       border-radius: 10px;
-       margin-left: 30px;
+    
        width: 120px;
        height: 120px;
        border: 20px solid #969696;
        background: #d9dbda;
-       margin: 10px
+       margin: 10px;
+       margin-left: 50px;
    }
     .dropdowncontainer
     {
@@ -101,7 +108,16 @@
     }
     .loadText
     {
-        margin-left: 10px;
+        margin-left: 0px;
+    }
+    .MainContainer
+    {
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+
+        margin-left: 32px;
     }
     .buttonDIV
     {
