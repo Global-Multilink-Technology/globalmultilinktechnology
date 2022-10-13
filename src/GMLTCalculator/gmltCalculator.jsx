@@ -21,48 +21,54 @@ const GMLTcalculator = ()=>
     const [TV_100WBELOW,setTV_100WBELOW] = useState(0);
     const [AC_1_5hp,setAC_1_5hp] = useState(0);
     const [WashingMachine_300W,setWashigMachine_300W] = useState(0);
+    const [EnergyBulb_40W,setEnergyBulb_40W] = useState(0);
 
     const updateWashingMachine_300W = (data)=>
     {
         setWashigMachine_300W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(data*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(data*300))
       
     }
     const updateAC_1_5hp = (data)=>
     {
         setAC_1_5hp(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(data*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(data*1118.55)+(WashingMachine_300W*300))
       
     }
     const updateCFL_14W = (data)=>
     {
         setCFL_14W(data)
-        setLoad((data*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((data*14)+(Fan*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
       
     }
     
     const updateFan = (data)=>
     {
         setFan(data)
-        setLoad((CFL_14W*14)+(data*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(data*70)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
         
     const updateTV_150W = (data)=>
     {
         setTV_150W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(data*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(TV_100WBELOW)+(EnergyBulb_40W*40)+(Laptop_60W*65)+(data*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
 
     const updateLaptop_60W = (data)=>
     {
         setLaptop_60W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(data*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(data*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
 
     const updateTV100WBELOW = (data)=>
     {
         setTV_100WBELOW(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(data*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(EnergyBulb_40W*40)+(TV_150W*300)+(data*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+    }
+    const updateEnergyBulb_40W = (data)=>
+    {
+        setEnergyBulb_40W(data)
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*65)+(data*40)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
  
    return(
@@ -83,8 +89,8 @@ const GMLTcalculator = ()=>
   
         <div className="box">
         <p className="loadText">Energy Bulb</p>
-        <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fan}>
-           {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateFan(data.id)}>{data.id}</Dropdown.Item>)}      
+        <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={EnergyBulb_40W}>
+           {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateEnergyBulb_40W(data.id)}>{data.id}</Dropdown.Item>)}      
         </DropdownButton>
         <p className="loadTextWatt">(40W)</p>
         </div>
@@ -96,7 +102,7 @@ const GMLTcalculator = ()=>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateCFL_14W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
-      <p className="loadTextWatt">(40W)</p>
+      <p className="loadTextWatt">(14W)</p>
       </div>
       <div className="box">
       <p className="loadText">Celing Fan(CF)</p>
@@ -127,7 +133,7 @@ const GMLTcalculator = ()=>
       <p className="loadText">Washing Mac</p>      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={WashingMachine_300W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateWashingMachine_300W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
-      <p className="loadTextWatt">(100W)</p>
+      <p className="loadTextWatt">(300W)</p>
       </div>
       <div className="box">
       <p className="loadText">AC Split Unit</p>
