@@ -1,4 +1,9 @@
 
+.power
+{
+ margin-left: 145px; 
+
+}
 
 @media screen and (max-width: 400px) /* Mobile */
 {
@@ -9,6 +14,10 @@
    .header
    {
       margin-left: 70px;
+   }
+   .headerX
+   {
+      margin-left: 140px;
    }
    .power
    {
@@ -22,6 +31,12 @@
        border-color: black;
        border-radius: 10px;
        margin-left: 20px;
+       width: 120px;
+       height: 120px;
+       border: 20px solid #969696;
+       background: #d9dbda;
+       margin: 10px
+
    }
     .dropdowncontainer
     {
@@ -53,6 +68,11 @@
    {
       margin-left: 90px;
    }
+
+   .headerX
+   {
+      margin-left: 140px;
+   }
    .power
    {
     margin-left: 155px; 
@@ -65,6 +85,11 @@
        border-color: black;
        border-radius: 10px;
        margin-left: 30px;
+       width: 120px;
+       height: 120px;
+       border: 20px solid #969696;
+       background: #d9dbda;
+       margin: 10px
    }
     .dropdowncontainer
     {

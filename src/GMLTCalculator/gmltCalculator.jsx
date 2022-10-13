@@ -18,32 +18,33 @@ const GMLTcalculator = ()=>
     const [Fan,setFan] = useState(0);
     const [Laptop_60W,setLaptop_60W] = useState(0);
     const [TV_150W,setTV_150W] = useState(0);
+    const [TV_100WBELOW,setTV_100WBELOW] = useState(0);
     const [AC_1_5hp,setAC_1_5hp] = useState(0);
     const [WashingMachine_300W,setWashigMachine_300W] = useState(0);
 
     const updateWashingMachine_300W = (data)=>
     {
         setWashigMachine_300W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*150)+(AC_1_5hp*1118.55)+(data*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(data*300))
       
     }
     const updateAC_1_5hp = (data)=>
     {
         setAC_1_5hp(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*150)+(data*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(data*1118.55)+(WashingMachine_300W*300))
       
     }
     const updateCFL_14W = (data)=>
     {
         setCFL_14W(data)
-        setLoad((data*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((data*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
       
     }
     
     const updateFan = (data)=>
     {
         setFan(data)
-        setLoad((CFL_14W*14)+(data*70)+(Laptop_60W*60)+(TV_150W*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(data*70)+(Laptop_60W*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
         
     const updateTV_150W = (data)=>
@@ -55,23 +56,45 @@ const GMLTcalculator = ()=>
     const updateLaptop_60W = (data)=>
     {
         setLaptop_60W(data)
-        setLoad((CFL_14W*14)+(Fan*70)+(data*60)+(TV_150W*150)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+        setLoad((CFL_14W*14)+(Fan*70)+(data*60)+(TV_150W*300)+(TV_100WBELOW*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
     }
 
-
+    const updateTV100WBELOW = (data)=>
+    {
+        setTV_100WBELOW(data)
+        setLoad((CFL_14W*14)+(Fan*70)+(Laptop_60W*60)+(TV_150W*300)+(data*100)+(AC_1_5hp*1118.55)+(WashingMachine_300W*300))
+    }
  
    return(
     <div>
       <HomeHeader />
       <h2 className="header">Select your load(s)</h2>
-      <h2 className="power">{load}watts</h2>
+      <h2 className="headerX">{load}watts</h2>
       <div className="container">
+        
+        <div className="box">
+        <p className="loadText"> TV-100W & Below</p>
+        <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
+           {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateTV100WBELOW(data.id)}>{data.id}</Dropdown.Item>)}      
+        </DropdownButton>
+        </div>
+  
+        <div className="box">
+        <p className="loadText">Energy Bulb -40Watts</p>
+        <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fan}>
+           {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateFan(data.id)}>{data.id}</Dropdown.Item>)}      
+        </DropdownButton>
+        </div>
+        </div>
+      <div className="container">
+
       <div className="box">
       <p className="loadText">Lamp(CFL)-11Watts</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={CFL_14W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateCFL_14W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
       </div>
+
       <div className="box">
       <p className="loadText">Celing Fan -70Watts</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={Fan}>
@@ -87,7 +110,7 @@ const GMLTcalculator = ()=>
       </DropdownButton>
       </div>
       <div className="box">
-      <p className="loadText">TV-150Watts</p>
+      <p className="loadText">TV-150W & Above</p>
       <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={TV_150W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateTV_150W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
