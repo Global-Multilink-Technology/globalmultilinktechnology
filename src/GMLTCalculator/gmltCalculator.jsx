@@ -167,7 +167,7 @@ const GMLTcalculator = ()=>
       </div>
       <div className="container">
       <div className="box">
-      <p className="loadText">Washing Mac</p>      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={WashingMachine_300W}>
+      <p className="loadTextWashingMachine">Washing Machine</p>      <DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={WashingMachine_300W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateWashingMachine_300W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
       <p className="loadTextWatt">(300W)</p>
