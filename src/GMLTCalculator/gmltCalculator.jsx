@@ -212,7 +212,7 @@ const GMLTcalculator = ()=>
       </div>
       <div className="container">
       <div className="box">
-      <p className="loadText2">Microwave(Oven)</p><DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={microWave_600W*600}>
+      <p className="loadText2">Microwave(Oven)</p><DropdownButton  className="dropdowncontainer" id="dropdown-basic-button" title={microWave_600W}>
          {NumberOfCFL50W.map((data)=><Dropdown.Item onClick={()=>updateMicroWave_600W(data.id)}>{data.id}</Dropdown.Item>)}      
       </DropdownButton>
       <p className="loadTextWatt">(600W)</p>
