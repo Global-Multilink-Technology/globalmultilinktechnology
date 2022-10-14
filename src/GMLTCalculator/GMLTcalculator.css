@@ -58,6 +58,11 @@
     {
         margin-left: 0px;
     }
+    .loadText2
+    {
+        margin-left: 0px;
+        font-size: small;
+    }
    .buttonDIV
    {
     margin-left: 110px;
@@ -107,6 +112,12 @@
     .loadText
     {
         margin-left: 0px;
+
+    }
+    .loadText2
+    {
+        margin-left: 0px;
+        font-size: 15px;
     }
     .loadTextWatt
     {
