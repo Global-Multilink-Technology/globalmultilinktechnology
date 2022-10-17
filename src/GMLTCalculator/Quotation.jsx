@@ -13,6 +13,11 @@ const Quotation = ()=>
    const load =  useSelector((data)=>data.counter.load)
    const INVERTER = getInverterRating(load);
    const NumOfBatteries = getNumbersofBatteries(load) 
+   
+   const inverterPrice = Number(INVERTER[1])
+   const acsurgePrice = 20
+   const rackPrice = 25
+   const accessoriesPrice =110
    return(
     <div>
       <HomeHeader />
@@ -36,9 +41,9 @@ const Quotation = ()=>
           <td>1</td>
           <td>Inverter</td>
           <td>{INVERTER[0]}KVA</td>
-          <td>{INVERTER[1]}K</td>
+          <td>{inverterPrice}K</td>
           <td>1</td>
-          <td>{INVERTER[1]}K</td>
+          <td>{inverterPrice}K</td>
         </tr>
         <tr>
           <td>2</td>
@@ -50,19 +55,35 @@ const Quotation = ()=>
         </tr>
         <tr>
         <td>3</td>
-          <td>Rack</td>
+          <td>AC Surge</td>
           <td>-----</td>
-          <td>24K</td>
+          <td>{acsurgePrice}K</td>
           <td>1</td>
-          <td>24K</td>
+          <td>{acsurgePrice}K</td>
         </tr>
         <tr>
         <td>4</td>
+          <td>Cable Logs</td>
+          <td>Copper</td>
+          <td>20K</td>
+          <td>1</td>
+          <td>20K</td>
+        </tr>
+        <tr>
+        <td>5</td>
+          <td>Rack</td>
+          <td>-----</td>
+          <td>{rackPrice}K</td>
+          <td>1</td>
+          <td>{rackPrice}K</td>
+        </tr>
+        <tr>
+        <td>6</td>
           <td>Accessory</td>
           <td>-----</td>
           <td>-----</td>
           <td>----</td>
-          <td>23K</td>
+          <td>{accessoriesPrice}K</td>
         </tr>
       </tbody>
     </Table> 
