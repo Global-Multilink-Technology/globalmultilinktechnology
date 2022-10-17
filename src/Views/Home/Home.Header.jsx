@@ -15,7 +15,7 @@ const HomeHeader = ()=>
                   <p className = "container1Text">Don't Know which inverter you need ?   <a href="/gmltcalculator"><span className="calculatorText">Find Out using GMLT Load calculator</span> </a> </p>
             </div>
             <div className="LOGO">
-            <a href="/"> <img className=" LOGOTEXT mb-4" src="./photo_2022-10-16_22-20-28.jpg" alt="" width="76" height="57"  /></a>
+            <a href="/"> <img className=" LOGOTEXT mb-4" src="./photo_2022-10-16_22-20-28.jpg" alt="" width="95" height="57"  /></a>
               
                
                  <div className="cartIcon"> <a href="/cart"><TiShoppingCart size={23} color="red" /></a></div>
