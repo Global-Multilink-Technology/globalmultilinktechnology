@@ -15,6 +15,7 @@ const Quotation = ()=>
    const NumOfBatteries = getNumbersofBatteries(load) 
    
    const inverterPrice = Number(INVERTER[1])
+   const batteryCost = 185
    const acsurgePrice = 20
    const rackPrice = 25
    const accessoriesPrice =110
@@ -49,9 +50,9 @@ const Quotation = ()=>
           <td>2</td>
           <td>Battery</td>
           <td>230Ah</td>
-          <td>185k</td>
+          <td>{batteryCost}k</td>
           <td>{NumOfBatteries}</td>
-          <td>{NumOfBatteries * 185}K</td>
+          <td>{(NumOfBatteries * batteryCost)}K</td>
         </tr>
         <tr>
         <td>3</td>
@@ -63,14 +64,6 @@ const Quotation = ()=>
         </tr>
         <tr>
         <td>4</td>
-          <td>Cable Logs</td>
-          <td>Copper</td>
-          <td>20K</td>
-          <td>1</td>
-          <td>20K</td>
-        </tr>
-        <tr>
-        <td>5</td>
           <td>Rack</td>
           <td>-----</td>
           <td>{rackPrice}K</td>
@@ -78,12 +71,20 @@ const Quotation = ()=>
           <td>{rackPrice}K</td>
         </tr>
         <tr>
-        <td>6</td>
+        <td>5</td>
           <td>Accessory</td>
           <td>-----</td>
-          <td>-----</td>
+          <td>{accessoriesPrice}K</td>
           <td>----</td>
           <td>{accessoriesPrice}K</td>
+        </tr>
+        <tr>
+        <td>6</td>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{inverterPrice+(batteryCost*NumOfBatteries)+acsurgePrice+rackPrice+accessoriesPrice}K</td>
         </tr>
       </tbody>
     </Table> 
@@ -111,7 +112,7 @@ const Quotation = ()=>
         </tr>
         <tr>
           <td>2</td>
-          <td>Clamp-Hook</td>
+          <td><p style={{fontSize:"12px"}}>Clamp & Hook</p></td>
           <td>---</td>
           <td>5k</td>
           <td>2</td>
