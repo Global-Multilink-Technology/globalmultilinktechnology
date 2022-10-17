@@ -17,7 +17,7 @@ const Quotation = ()=>
     <div>
       <HomeHeader />
       <h2 className="header">Your Quotation</h2>
-      <h2 className="power">{Math.ceil(load)}watts</h2>
+      <h2 className="headerX">{Math.ceil(load)}watts</h2>
       <h2 className="header">INVERTER PHASE</h2>
       <div className="container">      
       <Table striped bordered hover>

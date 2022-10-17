@@ -8,12 +8,16 @@
    }
    .header
    {
-      margin-left: 70px;
+      margin-left: 120px;
    }
    .power
    {
     margin-left: 95px; 
 
+   }
+   .headerX
+   {
+      margin-left: 150px;
    }
    .box
    {
@@ -51,12 +55,16 @@
    }
    .header
    {
-      margin-left: 90px;
+      margin-left: 120px;
    }
    .power
    {
     margin-left: 10px; 
 
+   }
+   .headerX
+   {
+      margin-left: 150px;
    }
    .box
    {
