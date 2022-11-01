@@ -33,12 +33,36 @@ export const getInverterRating = (load)=>
 
 export const getNumbersofBatteries=(load)=>
 {
-    const  backupTime = 12;
+    const  backupTime = 8;
     const NumOfBaetteries =(backupTime * load)/(12 * 220)
     return Math.floor(NumOfBaetteries);
 }
 
 export const getNumberofSolarPanels = (load,NumberOfBatteries)=>
 {
-     const NumberOfPanels = getNumbersofBatteries(load) 
+     const NumberOfPanels = getNumbersofBatteries(load) * 3
+     return NumberOfPanels;  
 }
+export const getNoOfChargeController= (NumberOfPanels)=>
+{
+     let NoOfcontroller = 1
+     let PanelCurrent = (NumberOfPanels * 330)/48  
+  if(PanelCurrent<40)
+  {
+      return [40,80,1];
+  }else
+  if((PanelCurrent>40)&&(PanelCurrent<70))
+  {
+        return [60,120,1];
+  }else if(PanelCurrent>100)
+  {
+      
+        for(let i=PanelCurrent;i>120;i = i/2)
+        {
+          PanelCurrent = PanelCurrent/2;
+          NoOfcontroller = NoOfcontroller + 1;
+        }
+        return [120,185,NoOfcontroller]  
+      
+      }
+  }

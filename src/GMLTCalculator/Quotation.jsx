@@ -4,7 +4,7 @@ import "./Quotation.css"
 import Footer from "../Views/Footer/Footer";
 import { useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
-import { getInverterRating,getNumbersofBatteries } from "./SolarFunctions";
+import { getInverterRating,getNumbersofBatteries,getNumberofSolarPanels,getNoOfChargeController } from "./SolarFunctions";
 
 
 
@@ -12,13 +12,17 @@ const Quotation = ()=>
 {
    const load =  useSelector((data)=>data.counter.load)
    const INVERTER = getInverterRating(load);
-   const NumOfBatteries = getNumbersofBatteries(load) 
-   
+   const NumOfBatteries = getNumbersofBatteries(load)    
    const inverterPrice = Number(INVERTER[1])
    const batteryCost = 185
    const acsurgePrice = 20
    const rackPrice = 25
    const accessoriesPrice =110
+
+   //Solar Variables 
+   const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
+   const ClampHook = NumOfSolarPanels * 3
+   const ChargeController = getNoOfChargeController(NumOfSolarPanels)
    return(
     <div>
       <HomeHeader />
@@ -107,24 +111,24 @@ const Quotation = ()=>
           <td>Panels</td>
           <td>330Watt</td>
           <td>₦78K</td>
-          <td>4</td>
-          <td>₦312K</td>
+          <td>{NumOfSolarPanels}</td>
+          <td>₦{78*NumOfSolarPanels}K</td>
         </tr>
         <tr>
           <td>2</td>
-          <td><p style={{fontSize:"12px"}}>Clamp & Hook</p></td>
+          <td><p style={{fontSize:"12px"}}>Clamp&Hook</p></td>
           <td>---</td>
-          <td>₦5k</td>
-          <td>2</td>
-          <td>₦10K</td>
+          <td>₦950</td>
+          <td>{ClampHook}</td>
+          <td>₦{Math.ceil(ClampHook * 0.9)}K</td>
         </tr>
         <tr>
         <td>3</td>
           <td>Controller</td>
-          <td>120A</td>
-          <td>₦85K</td>
-          <td>1</td>
-          <td>₦85K</td>
+          <td>{ChargeController[0]}A</td>
+          <td>₦{ChargeController[1]}K</td>
+          <td>{ChargeController[2]}</td>
+          <td>₦{ChargeController[1] * ChargeController[2]}K</td>
         </tr>
         <tr>
         <td>4</td>
@@ -133,6 +137,14 @@ const Quotation = ()=>
           <td>₦20k</td>
           <td>4yards</td>
           <td>₦23K</td>
+        </tr>
+        <tr>
+        <td>5</td>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))}K</td>
         </tr>
       </tbody>
     </Table> 
