@@ -148,6 +148,7 @@ const Quotation = ()=>
         </tr>
       </tbody>
     </Table> 
+    <p>Grand Total:₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))+inverterPrice+(batteryCost*NumOfBatteries)+acsurgePrice+rackPrice+accessoriesPrice}K</p>
       <Footer />
     </div>
    )
