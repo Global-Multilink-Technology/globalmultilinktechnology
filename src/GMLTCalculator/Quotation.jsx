@@ -16,8 +16,11 @@ const Quotation = ()=>
    const NumOfBatteries = getNumbersofBatteries(load)    
    const inverterPrice = Number(INVERTER[1])
    const batteryCost = 185
+   const SeriesCable = NumOfBatteries-2
+   const SeriesCableCost = 1
+   const SeriesCableTotal = SeriesCable * SeriesCableCost
    const BatteryTotal = NumOfBatteries * batteryCost 
-
+   
 
    //Solar Variables 
    const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
@@ -36,7 +39,7 @@ const Quotation = ()=>
 
 
    // Total
-   const InverterTotal = inverterPrice+BatteryTotal+RackTotal
+   const InverterTotal = inverterPrice+BatteryTotal+RackTotal+SeriesCableTotal
 
    //Grand Total
    const GrandTotal = InverterTotal + SolarTotal
@@ -85,6 +88,14 @@ const Quotation = ()=>
         </tr>
         <tr>
         <td>4</td>
+          <td>Ba3 Cable</td>
+          <td></td>
+          <td>₦{SeriesCableCost}K</td>
+          <td>{SeriesCable}</td>
+          <td>{SeriesCableTotal>999?`₦${SeriesCableTotal/1000}m`:`₦${SeriesCableTotal}K`}</td>
+        </tr>
+        <tr>
+        <td>5</td>
           <td>Total</td>
           <td></td>
           <td></td>
