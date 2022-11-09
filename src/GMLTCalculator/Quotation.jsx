@@ -23,6 +23,10 @@ const Quotation = ()=>
    const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
    const ClampHook = NumOfSolarPanels * 3
    const ChargeController = getNoOfChargeController(NumOfSolarPanels)
+
+
+   // Solar Rack
+   const RackQuantity = NumOfBatteries>=2?NumOfBatteries/2:NumOfBatteries
    return(
     <div>
       <HomeHeader />
@@ -69,10 +73,10 @@ const Quotation = ()=>
         <tr>
         <td>4</td>
           <td>Rack</td>
-          <td>-----</td>
+          <td>{RackQuantity}</td>
           <td>₦{rackPrice}K</td>
-          <td>1</td>
-          <td>₦{rackPrice}K</td>
+          <td>{NumOfBatteries/4}</td>
+          <td>₦{rackPrice*(NumOfBatteries/4)}K</td>
         </tr>
         <tr>
         <td>5</td>
