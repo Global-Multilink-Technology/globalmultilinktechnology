@@ -141,7 +141,7 @@ const Quotation = ()=>
         </tr>
       </tbody>
     </Table> 
-    <p>Grand Total:₦{GrandTotal>999?`₦${GrandTotal/1000}m`:`₦${GrandTotal}K`}K</p>
+    <p className="gtotal">Grand Total:{GrandTotal>999?`₦${GrandTotal/1000}m`:`₦${GrandTotal}K`}</p>
       <Footer />
     </div>
    )
