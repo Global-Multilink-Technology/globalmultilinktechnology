@@ -10,14 +10,14 @@ import { getInverterRating,getNumbersofBatteries,getNumberofSolarPanels,getNoOfC
 
 const Quotation = ()=>
 {
+  //Battery Variables
    const load =  useSelector((data)=>data.counter.load)
    const INVERTER = getInverterRating(load);
    const NumOfBatteries = getNumbersofBatteries(load)    
    const inverterPrice = Number(INVERTER[1])
    const batteryCost = 185
-   const acsurgePrice = 20
-   const rackPrice = 25
-   const accessoriesPrice =110
+   const BatteryTotal = NumOfBatteries * batteryCost 
+
 
    //Solar Variables 
    const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
@@ -26,7 +26,13 @@ const Quotation = ()=>
 
 
    // Solar Rack
+   const rackPrice = 25
    const RackQuantity = NumOfBatteries>=2?NumOfBatteries/2:NumOfBatteries
+   const RackTotal = rackPrice*(NumOfBatteries/4)
+
+
+   // Total
+   const InverterTotal = inverterPrice+BatteryTotal+RackTotal
    return(
     <div>
       <HomeHeader />
@@ -52,7 +58,7 @@ const Quotation = ()=>
           <td>{INVERTER[0]}KVA</td>
           <td>₦{inverterPrice}K</td>
           <td>1</td>
-          <td>₦{inverterPrice}K</td>
+          <td>{inverterPrice>999?`₦${inverterPrice/1000}m`:`₦${inverterPrice}K`}</td>
         </tr>
         <tr>
           <td>2</td>
@@ -60,39 +66,23 @@ const Quotation = ()=>
           <td>230Ah</td>
           <td>₦{batteryCost}k</td>
           <td>{NumOfBatteries}</td>
-          <td>₦{(NumOfBatteries * batteryCost)}K</td>
+          <td>{BatteryTotal>900?`₦${BatteryTotal/1000}m`:`₦${BatteryTotal}K`}</td>
         </tr>
-        <tr>
+         <tr>
         <td>3</td>
-          <td>AC Surge</td>
-          <td>-----</td>
-          <td>₦{acsurgePrice}K</td>
-          <td>1</td>
-          <td>₦{acsurgePrice}K</td>
-        </tr>
-        <tr>
-        <td>4</td>
           <td>Rack</td>
           <td>{RackQuantity}</td>
           <td>₦{rackPrice}K</td>
-          <td>{NumOfBatteries/4}</td>
-          <td>₦{rackPrice*(NumOfBatteries/4)}K</td>
+          <td>{RackQuantity/2}</td>
+          <td>{RackTotal>999?`₦${RackTotal/1000}m`:`₦${RackTotal}K`}</td>
         </tr>
         <tr>
-        <td>5</td>
-          <td>Accessory</td>
-          <td>-----</td>
-          <td>₦{accessoriesPrice}K</td>
-          <td>----</td>
-          <td>₦{accessoriesPrice}K</td>
-        </tr>
-        <tr>
-        <td>6</td>
+        <td>4</td>
           <td>Total</td>
           <td></td>
           <td></td>
           <td></td>
-          <td>₦{inverterPrice+(batteryCost*NumOfBatteries)+acsurgePrice+rackPrice+accessoriesPrice}K</td>
+          <td>{InverterTotal>999?`₦${InverterTotal/1000}m`:`₦${InverterTotal}K`}</td>
         </tr>
       </tbody>
     </Table> 
@@ -152,7 +142,7 @@ const Quotation = ()=>
         </tr>
       </tbody>
     </Table> 
-    <p>Grand Total:₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))+inverterPrice+(batteryCost*NumOfBatteries)+acsurgePrice+rackPrice+accessoriesPrice}K</p>
+    <p>Grand Total:₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))+inverterPrice+(batteryCost*NumOfBatteries)+rackPrice}K</p>
       <Footer />
     </div>
    )
