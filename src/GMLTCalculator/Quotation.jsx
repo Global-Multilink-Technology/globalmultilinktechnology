@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React from "react"
 import HomeHeader from "../Views/Home/Home.Header";
 import "./Quotation.css"
 import Footer from "../Views/Footer/Footer";
@@ -23,6 +23,10 @@ const Quotation = ()=>
    const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
    const ClampHook = NumOfSolarPanels * 3
    const ChargeController = getNoOfChargeController(NumOfSolarPanels)
+   const PanelTotal = 78*NumOfSolarPanels;
+   const ClampHookTotal = Math.ceil(ClampHook * 0.9);
+   const ControllerTotal = ChargeController[1] * ChargeController[2]
+   const SolarTotal = ControllerTotal + ClampHookTotal + PanelTotal;
 
 
    // Solar Rack
@@ -33,6 +37,9 @@ const Quotation = ()=>
 
    // Total
    const InverterTotal = inverterPrice+BatteryTotal+RackTotal
+
+   //Grand Total
+   const GrandTotal = InverterTotal + SolarTotal
    return(
     <div>
       <HomeHeader />
@@ -106,7 +113,7 @@ const Quotation = ()=>
           <td>330Watt</td>
           <td>₦78K</td>
           <td>{NumOfSolarPanels}</td>
-          <td>₦{78*NumOfSolarPanels}K</td>
+          <td>{PanelTotal>999?`₦${PanelTotal/1000}m`:`₦${PanelTotal}K`}</td>
         </tr>
         <tr>
           <td>2</td>
@@ -114,7 +121,7 @@ const Quotation = ()=>
           <td>---</td>
           <td>₦950</td>
           <td>{ClampHook}</td>
-          <td>₦{Math.ceil(ClampHook * 0.9)}K</td>
+          <td>{ClampHookTotal>999?`₦${ClampHookTotal/1000}m`:`₦${ClampHookTotal}K`}</td>
         </tr>
         <tr>
         <td>3</td>
@@ -122,27 +129,19 @@ const Quotation = ()=>
           <td>{ChargeController[0]}A</td>
           <td>₦{ChargeController[1]}K</td>
           <td>{ChargeController[2]}</td>
-          <td>₦{ChargeController[1] * ChargeController[2]}K</td>
+          <td>{ControllerTotal>999?`₦${ControllerTotal/1000}m`:`₦${ControllerTotal}K`}</td>
         </tr>
         <tr>
         <td>4</td>
-          <td>PV Cables</td>
-          <td>50mm</td>
-          <td>₦20k</td>
-          <td>4yards</td>
-          <td>₦23K</td>
-        </tr>
-        <tr>
-        <td>5</td>
           <td>Total</td>
           <td></td>
           <td></td>
           <td></td>
-          <td>₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))}K</td>
+          <td>{SolarTotal>999?`₦${SolarTotal/1000}m`:`₦${SolarTotal}K`}</td>
         </tr>
       </tbody>
     </Table> 
-    <p>Grand Total:₦{(ChargeController[1]* ChargeController[2])+(Math.ceil(ClampHook * 0.9) + (78*NumOfSolarPanels))+inverterPrice+(batteryCost*NumOfBatteries)+rackPrice}K</p>
+    <p>Grand Total:₦{GrandTotal>999?`₦${GrandTotal/1000}m`:`₦${GrandTotal}K`}K</p>
       <Footer />
     </div>
    )
