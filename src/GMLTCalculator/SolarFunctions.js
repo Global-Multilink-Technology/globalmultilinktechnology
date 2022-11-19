@@ -1,7 +1,7 @@
 
 export const getInverterRating = (load)=>
 {
-   const result = (load/0.8);
+   const result = (load);
   if((result>=0)&&(result<=800))
   {
     return [1,75];

@@ -23,7 +23,7 @@ const Quotation = ()=>
    
 
    //Solar Variables 
-   const NumOfSolarPanels = getNumberofSolarPanels(load)
+   //const NumOfSolarPanels = getNumberofSolarPanels(load)
    //const ClampHook = NumOfSolarPanels * 3
    //const ChargeController = getNoOfChargeController(NumOfSolarPanels)
    //const PanelTotal = 78*NumOfSolarPanels;
@@ -125,7 +125,7 @@ const Quotation = ()=>
           <td>Panels</td>
           <td>330Watt</td>
           <td>₦78K</td>
-          <td>{NumOfSolarPanels}</td>
+          <td>{/*NumOfSolarPanels*/}</td>
           <td>{/*PanelTotal>999?`₦${PanelTotal/1000}m`:`₦${PanelTotal}K`*/}</td>
         </tr>
         <tr>
