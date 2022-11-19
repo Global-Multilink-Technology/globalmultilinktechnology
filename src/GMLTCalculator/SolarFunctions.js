@@ -57,7 +57,7 @@ export const getNumbersofBatteries=(load)=>
 
 }
 
-export const getNumberofSolarPanels = (load,NumberOfBatteries)=>
+export const getNumberofSolarPanels = (load)=>
 {
      const NumberOfPanels = getNumbersofBatteries(load) * 3
      return NumberOfPanels;  

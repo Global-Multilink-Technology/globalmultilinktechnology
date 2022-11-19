@@ -23,7 +23,7 @@ const Quotation = ()=>
    
 
    //Solar Variables 
-   //const NumOfSolarPanels = getNumberofSolarPanels(load,NumOfBatteries)
+   const NumOfSolarPanels = getNumberofSolarPanels(load)
    //const ClampHook = NumOfSolarPanels * 3
    //const ChargeController = getNoOfChargeController(NumOfSolarPanels)
    //const PanelTotal = 78*NumOfSolarPanels;
@@ -105,7 +105,57 @@ const Quotation = ()=>
         </tr>
       </tbody>
     </Table> 
-     
+
+    <h2 className="header">SOLAR PHASE</h2>
+      <Table striped bordered hover>
+
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Item </th>
+          <th>Rating</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Panels</td>
+          <td>330Watt</td>
+          <td>₦78K</td>
+          <td>{NumOfSolarPanels}</td>
+          <td>{/*PanelTotal>999?`₦${PanelTotal/1000}m`:`₦${PanelTotal}K`*/}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><p style={{fontSize:"12px"}}>Clamp&Hook</p></td>
+          <td>---</td>
+          <td>₦950</td>
+          <td>{/*ClampHook*/}</td>
+          <td>{/*ClampHookTotal>999?`₦${ClampHookTotal/1000}m`:`₦${ClampHookTotal}K`*/}</td>
+        </tr>
+        <tr>
+        <td>3</td>
+          <td>Controller</td>
+          <td>{/*ChargeController[0]*/}A</td>
+          <td>₦{/*ChargeController[1]*/}K</td>
+          <td>{/*ChargeController[2]*/}</td>
+          <td>{/*ControllerTotal>999?`₦${ControllerTotal/1000}m`:`₦${ControllerTotal}K`*/}</td>
+        </tr>
+        <tr>
+        <td>4</td>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+ 
+
+      </Table> 
       <Footer />
     </div>
    )
