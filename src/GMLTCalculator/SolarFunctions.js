@@ -70,7 +70,7 @@ export const getNoOfChargeController= (NumberOfPanels)=>
   {
       return [40,80,1];
   }else
-  if((PanelCurrent>40)&&(PanelCurrent<70))
+  if((PanelCurrent>40)&&(PanelCurrent<=100))
   {
         return [60,120,1];
   }else if(PanelCurrent>100)
